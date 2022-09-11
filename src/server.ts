@@ -18,7 +18,6 @@ mongoose
     Logging.error(err);
   });
 
-
 // Only start the server if Mongo Connects //
 const StartServer = () => {
   router.use((req, res, next) => {
@@ -33,7 +32,6 @@ const StartServer = () => {
 
     next();
   });
-
 
   router.use(express.urlencoded({extended: true}));
   router.use(express.json());
