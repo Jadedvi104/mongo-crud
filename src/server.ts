@@ -3,6 +3,7 @@ import http from "http";
 import mongoose from "mongoose";
 import { config } from "./config/config";
 import Logging from "./library/logging";
+import authorRoutes from './routes/Author';
 
 const router = express();
 
@@ -16,7 +17,6 @@ mongoose
     Logging.error("Unable to connect:  ");
     Logging.error(err);
   });
-
 
 
 // Only start the server if Mongo Connects //
@@ -55,6 +55,7 @@ const StartServer = () => {
 
 
   // Routes //
+  router.use('/authors', authorRoutes);
 
 
   // HealthCheck//
